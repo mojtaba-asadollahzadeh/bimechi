@@ -1,0 +1,86 @@
+.card{
+    margin-bottom: 20px !important;
+}
+
+@font-face {
+    font-family: 'iransans';
+    src: url(../fonts/iransans.ttf);
+}
+
+*{
+	font-family: 'iransans','Raleway',sans-serif;
+    text-align: right;
+    direction: rtl;
+}
+
+.bootstrap-tagsinput{
+	width: 100%;
+}
+.bootstrap-tagsinput .tag{
+	margin-right: 2px;
+    color: white;
+    background: #444;
+    padding: 5px;
+    line-height: initial;
+    border-radius: 5px;
+}
+
+.bootstrap-tagsinput input{
+	width: 160px;
+}
+.navbar-nav.ml-auto{
+    display: contents;
+}
+.navbar-nav.ml-auto li{
+    float: right;
+    margin-right: 20px; 
+    font-size: 1.1rem;
+}
+.navbar-nav.ml-auto li a span{
+    color: #333;
+    text-decoration: none;
+}
+
+.navbar-nav.ml-auto li a span{
+    color: #333;
+    font-family: 'iransans';
+    margin-right: 10px;
+}
+.navbar-nav.ml-auto li a:hover{
+    color: red;
+    text-decoration: none;
+}
+
+.navbar-nav.ml-auto li a span:hover{
+    color: red;
+    text-decoration: none;
+}
+
+.pull-right{
+    float:right;
+}
+.sidebar-menu{
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0 0 3px #e1e1e1;
+    border-radius: 3px;
+}
+.sidebar-menu li{
+    background: #f7f7f7;
+    margin-bottom: 5px;
+    padding: 0px;
+    border-radius: 3px;
+}
+
+.sidebar-menu li a{
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.sidebar-menu li:hover{
+    background: #e1e1e1;
+}
+.sidebar-menu li a i{
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
