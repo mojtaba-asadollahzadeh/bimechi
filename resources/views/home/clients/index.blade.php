@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<a href="/home/clients/store" class="btn btn-lg btn-success">افزودن مشتری جدید</a>
 <div class="card">
     <div class="card-header">مشتریان شما</div>
 
@@ -21,10 +22,14 @@
     			@foreach($clients as $client)
 	    			<tr>
 	    				<td class="text-center">
-	    					{{$client->code}}
+	    					{{$client->id}}
 	    				</td>
 	    				<td class="text-center">
-	    					{{$client->type}}
+	    					@if($client->type)
+	    						<label class="badge badge-primary">حقیقی</label>
+	    					@else
+	    						<label class="badge badge-info">حقوقی</label>
+	    					@endif
 	    				</td>
 	    				<td class="text-center">
 	    					{{$client->name}}
@@ -38,7 +43,11 @@
 	    				<td class="text-center">
 	    					{{$client->mobile}}
 	    				</td>
-	    				<td class="text-center"></td>
+	    				<td class="text-center">
+	    					<a href="/home/clients/delete/{{$client->id}}" class="fas fa-trash"></a>
+	    					&nbsp
+	    					<a href="/home/clients/{{$client->id}}" class="fas fa-eye"></a>
+	    				</td>
 	    			</tr>
     			@endforeach
     		</tbody>
@@ -50,7 +59,28 @@
 @section('script')
 <script type="text/javascript">
 	$(document).ready( function () {
-	    $('.table').DataTable();
+	    var table = $('.table').DataTable({
+	        "language": {
+			    "emptyTable":     "داده موجود نیست !",
+			    "info":           "نمایش _START_ صفحه _END_ از _TOTAL_ صفحه",
+			    "infoEmpty":      "داده ای یافت نشد",
+			    "infoFiltered":   "(filtered from _MAX_ total entries)",
+			    "infoPostFix":    "",
+			    "thousands":      ",",
+			    "lengthMenu":     "نمایش _MENU_ داده",
+			    "loadingRecords": "در حال بارگیری...",
+			    "search":         "جست و جو :",
+			    "zeroRecords":    "هیچ داده ای یافت نشد !",
+			    "paginate": {
+			        "first":      "اولین",
+			        "last":       "آخرین",
+			        "next":       "بعدی",
+			        "previous":   "قبلی"
+			    },
+	        },
+	        destroy: true,
+	    });
+
 	});
 </script>
 @stop

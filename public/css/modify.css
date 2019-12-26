@@ -96,3 +96,6 @@
 .form-check-inline .form-check-input{
     margin-left:10px;
 }
+.datepicker-plot-area .datepicker-navigator .pwt-btn-next,.datepicker-plot-area .datepicker-navigator .pwt-btn-prev{
+    transform: rotate(180deg);
+}

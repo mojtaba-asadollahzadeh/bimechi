@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/persian-datepicker@latest/dist/css/persian-datepicker.min.css">
     @yield('style')
 </head>
 <body>
@@ -201,6 +202,8 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/persian-date@latest/dist/persian-date.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/persian-datepicker@latest/dist/js/persian-datepicker.min.js"></script>
     @if(Session::has('success'))
       <script type="text/javascript">
           swal("{{ Session::get('success') }}", {
