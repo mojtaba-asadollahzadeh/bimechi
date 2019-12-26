@@ -40,23 +40,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li>
-                            <a href="/home" class="fas fa-tachometer-alt">
-                                <span>داشبورد</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/home/installers" class="fas fa-suitcase"></a>
-                        </li>
-                        <li>
-                            <a href="/home/sellers" class="fas fa-store-alt"></a>
-                        </li>
-                        <li>
-                            <a href="/home/customers" class="fas fa-users"></a>
-                        </li>
-                        <li>
-                            <a href="/home/orders" class="fas fa-shopping-basket"></a>
-                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

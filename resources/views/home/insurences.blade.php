@@ -115,7 +115,27 @@
 @section('script')
 <script type="text/javascript">
 	$(document).ready( function () {
-	    $('.table').DataTable();
+	    $('.table').DataTable({
+	    	"language": {
+			    "emptyTable":     "داده موجود نیست !",
+			    "info":           "نمایش _START_ صفحه _END_ از _TOTAL_ صفحه",
+			    "infoEmpty":      "داده ای یافت نشد",
+			    "infoFiltered":   "(filtered from _MAX_ total entries)",
+			    "infoPostFix":    "",
+			    "thousands":      ",",
+			    "lengthMenu":     "نمایش _MENU_ داده",
+			    "loadingRecords": "در حال بارگیری...",
+			    "search":         "جست و جو :",
+			    "zeroRecords":    "هیچ داده ای یافت نشد !",
+			    "paginate": {
+			        "first":      "اولین",
+			        "last":       "آخرین",
+			        "next":       "بعدی",
+			        "previous":   "قبلی"
+			    },
+	        },
+	        destroy: true,
+	    });
 	});
 </script>
 @stop

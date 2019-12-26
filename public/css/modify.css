@@ -64,6 +64,7 @@
     background: #fff;
     box-shadow: 0 0 3px #e1e1e1;
     border-radius: 3px;
+    height: fit-content;
 }
 .sidebar-menu li{
     background: #f7f7f7;
@@ -98,4 +99,7 @@
 }
 .datepicker-plot-area .datepicker-navigator .pwt-btn-next,.datepicker-plot-area .datepicker-navigator .pwt-btn-prev{
     transform: rotate(180deg);
+}
+.card-header{
+    background-color: #d1ccc0;
 }
