@@ -32,6 +32,14 @@ Route::group(['prefix' => 'home', 'middleware' => 'auth'], function() {
 		Route::post('/update','ClientController@update');
 	});
 
+	Route::group(['prefix' => 'marketers'], function() {
+	    Route::get('/','MarketerController@index');
+		Route::get('/store','MarketerController@store');
+		Route::post('/store','MarketerController@create');
+		Route::get('/{id}','MarketerController@view');
+		Route::post('/update','MarketerController@update');
+	});
+
 	Route::group(['prefix' => 'users'], function() {
 	    Route::get('/','AdminUserController@index');
 		Route::get('/{id}','AdminUserController@one');

@@ -49,7 +49,11 @@ class ClientController extends Controller
     	$client->user_id = Auth::user()->id;
     	$client->type = $request->input('type');
     	$client->gender = $request->input('gender');
-    	$client->vip = $request->input('vip');
+    	if($request->input('vip') == 1){
+            $client->vip = 1;
+        }else{
+            $client->vip = 0;
+        }
     	$client->name = $request->input('name');
     	$client->family = $request->input('family');
     	$client->national_code = $request->input('national_code');

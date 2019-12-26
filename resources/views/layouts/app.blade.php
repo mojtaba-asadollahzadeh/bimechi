@@ -103,13 +103,13 @@
                               <li class="nav-item">
                                 <a class="nav-link" href="/home/users">
                                     <i class="fas fa-users" style="color: #e84393"></i>
-                                    مدیریت کاربران
+                                    کاربران
                                 </a>
                               </li>
                               <li class="nav-item">
                                 <a class="nav-link" href="/home/clients">
                                     <i class="fas fa-users" style="color: #40407a"></i>
-                                    مدیریت مشتریان
+                                    مشتریان
                                 </a>
                               </li>
                               <li class="nav-item">
@@ -119,7 +119,7 @@
                                 </a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="/home/marketers">
                                     <i class="fas fa-chalkboard-teacher" style="color: #e17055"></i>
                                     بازاریابان
                                 </a>

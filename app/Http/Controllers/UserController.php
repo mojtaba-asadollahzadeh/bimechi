@@ -108,20 +108,20 @@ class UserController extends Controller
 	        $destinationPath = public_path('/files');
 	        $image->move($destinationPath, $name);
 	        $user->national_card = "/files/". $name;
+
+            // create notification for admins
+            foreach (fetchAdmins() as $admin) {
+                $message = 'کاربر : '. $user->name .' , مدارک مربوط به کارت ملی خود را آپلود کرد.';
+                createNotification($admin->id,$message);    
+            }
     	}
     	$user->save();
-
-    	// create notification for admins
-    	foreach (fetchAdmins() as $admin) {
-    		$message = 'پروفایل کاربری کاربر : '. $user->name .' , به روز رسانی شد.';
-    		createNotification($admin->id,$message);	
-    	}
     	
     	return redirect()->back()->with('success','پروفایل شما با موفقیت به روزرسانی شد !');
     }
 
     // update password
-        public function password(Request $request)
+    public function password(Request $request)
     {
         $request->validate([
             'old' => 'required|string|min:6',
