@@ -101,7 +101,7 @@
                                 </a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="/home/users">
                                     <i class="fas fa-users" style="color: #e84393"></i>
                                     مدیریت کاربران
                                 </a>
@@ -164,7 +164,7 @@
                         @endif
                         @if(!Auth::user()->active)
                             <div class="alert alert-warning" role="alert">
-                              کاربر عزیز اکانت شما در خال بررسی می باشد و هنوز به مرحله ی تایید رسیده است
+                              کاربر عزیز اکانت شما در حال بررسی می باشد و هنوز به مرحله ی تایید رسیده است
                             </div>
                         @endif
                         @if ($errors->any())

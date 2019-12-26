@@ -56,7 +56,7 @@
 	    	<div class="col-xs-12 col-md-4 form-group">
 	    		<label>تاریخ تولد</label>
 	    		<input type="text" name="birth" class="form-control birth"
-	    		value="{{old('birth')}}">
+	    		value="{{old('birth')}}" autocomplete="off">
 	    	</div>
 	    	<div class="col-xs-12 col-md-6 form-group">
 	    		<label>آدرس منزل</label>
@@ -112,6 +112,7 @@
 <script type="text/javascript">
 	$(document).ready( function () {
 		$(".birth").pDatepicker({
+			 initialValue: false,
 		    format: 'YYYY/MM/DD',
 		});	    
 	});

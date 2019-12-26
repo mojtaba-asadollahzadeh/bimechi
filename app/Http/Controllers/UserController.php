@@ -85,8 +85,12 @@ class UserController extends Controller
 
     	$request->validate([
     		'name' => 'required|string|min:10|max:255',
-    		'phone' => 'required|sometimes|string|min:10|max:255',
+    		'mobile' => 'required|sometimes|string|min:10|max:255',
     		'code' => 'required|sometimes|string|min:2|max:255',
+            'phone' => 'required|sometimes|string|min:10|max:255',
+            'national_code' => 'required|sometimes|string|min:2|max:255',
+            'address' => 'required|sometimes|string|min:2|max:255',
+            'birth' => 'required|sometimes|string|min:2|max:255',
     		'national_card' => 'required|sometimes|file|mimes:jpeg,png,jpg',
     	]);
 
@@ -94,6 +98,10 @@ class UserController extends Controller
     	$user->name = $request->input('name');
     	$user->phone = $request->input('phone');
     	$user->code = $request->input('code');
+        $user->mobile = $request->input('mobile');
+        $user->address = $request->input('address');
+        $user->national_code = $request->input('national_code');
+        $user->birth = $request->input('birth');
     	if( $request->hasFile('national_card') ){
     		$image = $request->file('national_card');
 	        $name = md5( time() ) . '.' . $image->getClientOriginalExtension();
@@ -136,4 +144,5 @@ class UserController extends Controller
         }
 
     }
+    
 }

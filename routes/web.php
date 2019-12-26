@@ -32,4 +32,11 @@ Route::group(['prefix' => 'home', 'middleware' => 'auth'], function() {
 		Route::post('/update','ClientController@update');
 	});
 
+	Route::group(['prefix' => 'users'], function() {
+	    Route::get('/','AdminUserController@index');
+		Route::get('/{id}','AdminUserController@one');
+		Route::post('/update','AdminUserController@update');
+		Route::get('/{id}/status','AdminUserController@status');
+	});
+
 });
