@@ -72,14 +72,25 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }}
+                                    @if(sizeof(fetchNotification(Auth::user()->id)) > 0)
+                                        <i class="badge badge-danger" style="font-family: initial;">
+                                            {{sizeof(fetchNotification(Auth::user()->id))}}
+                                        </i>
+                                    @endif
+                                    <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    @foreach(fetchNotification(Auth::user()->id) as $notification)
+                                        <a class="dropdown-item" style="background: #e1e1e1;margin-bottom: 3px;">
+                                            {{ $notification->message }}
+                                        </a>
+                                    @endforeach
+                                    <hr>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('خروج') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -140,9 +151,34 @@
                                     گزارشات خرید
                                 </a>
                               </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="/home/profile">
+                                    <i class="fas fa-user" style="color: #8e44ad"></i>
+                                    پروفایل کاربری
+                                </a>
+                              </li>
                             </ul>
                     </div>
                     <div class="col-md-9">
+                        @if(Auth::user()->code == null || Auth::user()->phone == null)
+                            <div class="alert alert-danger" role="alert">
+                              پروفایل شما تکمیل نشده است، نسبت به تکمیل آن اقدام کنید !
+                            </div>
+                        @endif
+                        @if(!Auth::user()->active)
+                            <div class="alert alert-warning" role="alert">
+                              کاربر عزیز اکانت شما در خال بررسی می باشد و هنوز به مرحله ی تایید رسیده است
+                            </div>
+                        @endif
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         @yield('content')
                     </div>
                 </div>

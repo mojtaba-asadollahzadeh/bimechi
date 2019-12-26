@@ -32,6 +32,9 @@
         }
     },
     "autoload": {
+        "files":[
+            "app/Http/functions.php"
+        ],
         "psr-4": {
             "App\\": "app/"
         },
