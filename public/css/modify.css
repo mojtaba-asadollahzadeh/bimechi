@@ -92,3 +92,7 @@
 .box{
     padding: 0 !important;
 }
+
+.form-check-inline .form-check-input{
+    margin-left:10px;
+}

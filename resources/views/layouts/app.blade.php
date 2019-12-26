@@ -123,6 +123,12 @@
                                 </a>
                               </li>
                               <li class="nav-item">
+                                <a class="nav-link" href="/home/clients">
+                                    <i class="fas fa-users" style="color: #40407a"></i>
+                                    مدیریت مشتریان
+                                </a>
+                              </li>
+                              <li class="nav-item">
                                 <a class="nav-link" href="#">
                                     <i class="fas fa-file-alt" style="color: #d63031"></i>
                                     صدور بیمه نامه جدید

@@ -22,6 +22,14 @@ Route::group(['prefix' => 'home', 'middleware' => 'auth'], function() {
 	    Route::post('/type','InsurenceController@newType');
 	    Route::get('/delete/{id}','InsurenceController@delete');
 	    Route::get('/type/delete/{id}','InsurenceController@deleteType');
-
 	});
+
+	Route::group(['prefix' => 'clients'], function() {
+	    Route::get('/','ClientController@index');
+		Route::get('/store','ClientController@store');
+		Route::post('/store','ClientController@create');
+		Route::get('/{id}','ClientController@view');
+		Route::post('/update','ClientController@update');
+	});
+
 });
