@@ -10,7 +10,7 @@
     <title>بیمه چی</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    @yield('style')
 </head>
 <body>
     <div id="app">
@@ -134,7 +135,13 @@
                                 </a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="/home/insurences">
+                                    <i class="fas fa-sliders-h" style="color: #474787"></i>
+                                    تنظیمات بیمه ها
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="/home/settings">
                                     <i class="fas fa-cogs" style="color: #00b894"></i>
                                     تنظیمات
                                 </a>
@@ -213,5 +220,6 @@
           });
       </script>
     @endif
+    @yield('script')
 </body>
 </html>

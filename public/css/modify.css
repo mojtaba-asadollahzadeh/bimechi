@@ -89,3 +89,6 @@
     right: auto !important;
     left: 0;
 }
+.box{
+    padding: 0 !important;
+}
